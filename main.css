@@ -1,0 +1,76 @@
+div#widget{
+    font-family: 'Roboto', sans-serif;
+}
+
+div#widget h3, h1, p , img{
+	padding: 0 5px;
+}
+
+div#widget a {
+    width: 128px;
+    height: 16.5px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-align: right;
+    color: #276cf2;
+    text-decoration: none;
+    float:right;
+}
+
+div.widget-header h1{
+    width: 118.5px;
+    height: 28.5px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 300;
+    display: inline;
+    color: #3b3f47;
+}
+
+div.widget-header h3{
+    width: 149.5px;
+    height: 16.5px;
+    font-family: Roboto;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #6b6b6b;
+    display: inline;
+}
+
+div.widget-content {
+	padding: 0 5px;
+	margin-top: 15px;
+    width: 343px;
+    height: 156px;
+    border-radius: 2.5px;
+    background-color: #f2f3f5;
+}
+
+div.widget-content h3{
+    width: 206px;
+    height: 20px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+}
+
+div.movie-details{
+  	width: 238px;
+    height: 156px;
+  	float: left;
+}
+
+div.movie-details .star{
+  	width: 12.4px;
+  	height: 11.8px;
+}
+
+div.img-content {
+  	width: 105px;
+  	height: 156px;
+  	background-color: #bd10e0;
+  	float: right;
+}

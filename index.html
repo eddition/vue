@@ -1,0 +1,32 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="main.css">
+<div id="widget">
+	<movie :title = "title" :desc="desc" :rating="rating"></movie>
+	<!-- {{ $data | json }} -->
+</div>
+
+
+<template id='movie-widget'>
+	<div class='widget-header'>	
+		<h1 class='In-Theaters'>In Theaters</h1><br>
+		<h3>Top Movies This Week</h3>
+		<a href="">View More</a>
+	</div>
+	
+	<div class="widget-content">
+		<div class='movie-details'>
+			<h3>{{ title }}</h3>
+			<p>{{ desc }}</p>
+			<img class='star' src="assets/star.svg">
+		</div>
+		<div class="img-content">
+		</div>
+	</div>
+</template>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
+<script language="javascript" type="text/javascript" src="main.js"></script>
+
+
+
