@@ -351,30 +351,31 @@ link_template: "//api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office
 
 
 //extracted component
-Vue.component('movie', {
-	template: '#movie-widget',
-	props: ['title', 'desc', 'rating', 'link', 'imgSrc'],
-	methods: {
-		previousMovie: function(){
-			console.log('Last Movie');
-		},
-		nextMovie: function(){
-			console.log('Next Movie');
-		}
-	}
-})
+// Vue.component('movie', {
+// 	template: '#movie-widget',
+// 	props: ['title', 'desc', 'rating', 'link', 'imgPath'],
+// 	methods: {
+// 		previousMovie: function(){
+// 			console.log('Last Movie');
+// 		},
+// 		nextMovie: function(){
+// 			console.log('Next Movie');
+// 		}
+// 	}
+// })
 
 var vm = new Vue({
 	el: '#widget',
 
 	data: {
-		id     :   0,
-		title  : '',
-		imgSrc : '',
-		desc   : '',
-		rating : '',
-		apiLink: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=5&country=us&apikey=6czx2pst57j3g47cvq9erte5",
-		list   : []
+		id      :   0,
+		title   : '',
+		imgPath : '',
+		desc    : '',
+		rating  : '',
+		link    : '',
+		apiLink : "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=5&country=us&apikey=6czx2pst57j3g47cvq9erte5",
+		list    : []
 	}, 
 	ready: function(){
 		console.log('instance Ready');
@@ -385,12 +386,10 @@ var vm = new Vue({
 			// this.list = mockData;
             // this.$http.get(this.apiLink, function (data, status, request) {
             //     // this.$set('people', data);
-            //     debugger;
             //     this.loading = false
             // })
 			this.list = mockData.movies
 			this.setCurMovie()
-			debugger;
 // .error(function (data, status, request) {
 //                 console.log('error');
 //             })
@@ -398,9 +397,9 @@ var vm = new Vue({
 
         setCurMovie: function(){
         	this.title = this.list[this.id].title
-        	this.imgSrc = this.list[this.id].posters.thumbnail
+        	this.imgPath = this.list[this.id].posters.thumbnail
         	this.desc = this.list[this.id].synopsis
-        	debugger;
+        	this.link = this.list[this.id].links.alternate
         }
 	}
 });
