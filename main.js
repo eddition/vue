@@ -347,22 +347,7 @@ alternate: "http://www.rottentomatoes.com/movie/box-office/"
 link_template: "//api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit={num-results}&country={country-code}"
 }
 
-
-
-
-//extracted component
-// Vue.component('movie', {
-// 	template: '#movie-widget',
-// 	props: ['title', 'desc', 'rating', 'link', 'imgPath'],
-// 	methods: {
-// 		previousMovie: function(){
-// 			console.log('Last Movie');
-// 		},
-// 		nextMovie: function(){
-// 			console.log('Next Movie');
-// 		}
-// 	}
-// })
+'use strict'
 
 var vm = new Vue({
 	el: '#widget',
@@ -377,10 +362,11 @@ var vm = new Vue({
 		apiLink : "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=5&country=us&apikey=6czx2pst57j3g47cvq9erte5",
 		list    : []
 	}, 
+
 	ready: function(){
-		console.log('instance Ready');
 		this.getList();
 	}, 
+
 	methods: {
 		getList: function(){
 			// this.list = mockData;
@@ -389,17 +375,51 @@ var vm = new Vue({
             //     this.loading = false
             // })
 			this.list = mockData.movies
-			this.setCurMovie()
+			this.setMovie()
 // .error(function (data, status, request) {
 //                 console.log('error');
 //             })
         },
 
-        setCurMovie: function(){
-        	this.title = this.list[this.id].title
-        	this.imgPath = this.list[this.id].posters.thumbnail
-        	this.desc = this.list[this.id].synopsis
-        	this.link = this.list[this.id].links.alternate
+        setMovie: function(e){
+        	if (e){
+        		var i = parseInt(e.currentTarget.getAttribute('val'));
+        		this.toggleActiveClass(e.currentTarget);
+        	} else {
+        		i = 0
+        	}
+
+        	var movie = this.list[i];
+        	this.title = movie.title;
+        	this.imgPath = movie.posters.thumbnail;
+        	this.desc = movie.synopsis;
+        	this.rating = this.calcRating(movie.ratings.audience_score);
+        	this.link = movie.links.alternate;
+        	this.renderRatings();
+        },
+
+        calcRating: function(score){
+        	var rating = Math.floor(score/20);
+        	return rating;
+        },
+
+        renderRatings: function(){
+        	var parent = document.getElementsByClassName('ratings-container')[0];
+        	// Empty Rating Container
+        	while(parent.firstChild){ parent.removeChild(parent.firstChild) }
+        	// Append Stars to ratings container based on rating
+        	for(var i = 0; i < this.rating; i++){
+        		var star = document.createElement('img');
+        		star.classList.add('star');
+        		star.setAttribute('src', 'assets/star.svg')
+        		parent.appendChild(star);
+        	}
+        },
+
+        toggleActiveClass: function(el){
+        	var active = document.getElementsByClassName('active');
+        	active[0].classList.remove('active');
+        	el.classList.add('active');
         }
 	}
 });

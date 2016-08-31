@@ -20,11 +20,12 @@
 			<div id="desc-container">
 				{{ desc }}
 			</div>
-			<img class='star' src="assets/star.svg">
-			<img class='star' src="assets/star.svg">
-			<img class='star' src="assets/star.svg">
-			<img class='star' src="assets/star.svg">
-			<img class='star' src="assets/star.svg">
+			<div class='ratings-container'>
+<!-- 				<img class='star' src="assets/star.svg">
+				<img class='star' src="assets/star.svg">
+				<img class='star' src="assets/star.svg">
+				<img class='star' src="assets/star.svg"> -->
+			</div>
 		</div>
 		<div class="img-content">
 			<img :src="imgPath">
@@ -32,11 +33,11 @@
 	</div>
 	<div id="nav-controls">
 		<ol>
-			<li class='active'></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li v-on:click="setMovie" class='active' val='0'></li>
+			<li v-on:click="setMovie" val='1'></li>
+			<li v-on:click="setMovie" val='2'></li>
+			<li v-on:click="setMovie" val='3'></li>
+			<li v-on:click="setMovie" val='4'></li>
 		</ol>
 	</div>
 </div>
