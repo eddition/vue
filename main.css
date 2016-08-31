@@ -20,7 +20,7 @@ div#widget a {
     bottom: 0;
 }
 
-div.widget-header h1{
+div#widget div.widget-header h1{
     width: 118.5px;
     height: 28.5px;
     font-size: 24px;
@@ -29,7 +29,7 @@ div.widget-header h1{
     color: #3b3f47;
 }
 
-div.widget-header h3{
+div#widget div.widget-header h3{
     width: 149.5px;
     height: 16.5px;
     font-size: 14px;
@@ -38,7 +38,7 @@ div.widget-header h3{
     margin: 10px 0;
 }
 
-div.widget-content {
+div#widget div.widget-content {
 	margin-top: 15px;
     width: 343px;
     height: 156px;
@@ -48,7 +48,7 @@ div.widget-content {
     overflow: hidden;
 }
 
-div.widget-content h3{
+div#widget div.widget-content h3{
     width: 206px;
     height: 20px;
     font-size: 16px;
@@ -57,18 +57,17 @@ div.widget-content h3{
     margin: 0 0 10px 0;
 }
 
-div.movie-details{
+div#widget div.movie-details{
   	width: 238px;
     height: 156px;
   	position: absolute;
   	padding: 16px;
 }
 
-div.movie-details div#desc-container{
+div#widget div.movie-details div#desc-container{
 	margin: 0 0 10px 0;
 	width: 206px;
     height: 72px;
-    font-family: Roboto;
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: 0.5px;
@@ -80,12 +79,12 @@ div.movie-details div#desc-container{
     -webkit-box-orient: vertical;
 }
 
-div.movie-details .star{
+div#widget div.movie-details .star{
   	width: 12.4px;
   	height: 11.8px;
 }
 
-div.img-content {
+div#widget div.img-content {
   	width: 105px;
   	height: 156px;
   	background-color: #bd10e0;
@@ -96,19 +95,19 @@ div.img-content {
 div.img-content img {
 	width: 100%;
 }
-div#nav-controls{
+div#widget div#nav-controls{
 	margin: 10px auto 0;
 	text-align: center;
 }
 
-div#nav-controls ol{
+div#widget div#nav-controls ol{
     list-style:none;
     margin-top: 10px;
     padding: 0px;
     display: inline;
 }
 
-div#nav-controls ol li{
+div#widget div#nav-controls li{
     margin:0 2px; 
     border-radius: 50%;
     display: inline-block;
@@ -118,6 +117,6 @@ div#nav-controls ol li{
     border: solid 1px #979797;
 }
 
-li.active{
+ div#widget li.active{
     background: #888;
 }

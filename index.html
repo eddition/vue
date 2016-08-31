@@ -1,10 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="main.css">
-	<!-- <movie :title = "title" :desc="desc" :rating="rating" :imgPath="imgPath"></movie> -->
-	<!-- {{ $data | json }} -->
 
-
-<!-- <template id='movie-widget'> -->
 <div id="widget">
 	<div class='widget-header'>	
 		<div style="position:relative">
@@ -20,12 +16,7 @@
 			<div id="desc-container">
 				{{ desc }}
 			</div>
-			<div class='ratings-container'>
-<!-- 				<img class='star' src="assets/star.svg">
-				<img class='star' src="assets/star.svg">
-				<img class='star' src="assets/star.svg">
-				<img class='star' src="assets/star.svg"> -->
-			</div>
+			<div class='ratings-container'></div>
 		</div>
 		<div class="img-content">
 			<img :src="imgPath">
@@ -41,7 +32,6 @@
 		</ol>
 	</div>
 </div>
-<!-- </template> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
